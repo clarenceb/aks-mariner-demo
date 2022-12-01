@@ -1,6 +1,8 @@
 CBL-Mariner 2.0 use in AKS
 ==========================
 
+This is a simple demo based on the Mariner OS preview for AKS.
+
 Create AKS cluster with Mariner system nodepool
 -----------------------------------------------
 
@@ -93,10 +95,16 @@ kubectl get all -n marinertest
 Check logs are collected via Container Insights
 -----------------------------------------------
 
-Access 
+* Access your AKS resouce blade
+* Go to Monitoring / Insights
+* Select the `mariner` pod under "Containers"
+* Select "Live logs"
+* Access the webapp home page to generate some logs
+* Click "View in Log Analytics" to see the KQL query and results
 
 References
 ----------
 
 * https://learn.microsoft.com/EN-us/azure/aks/use-mariner
 * https://learn.microsoft.com/EN-us/azure/aks/cluster-configuration#mariner-os
+* https://faithlife.codes/blog/2022/05/using-cbl-mariner-for-asp-net-core-apps/
