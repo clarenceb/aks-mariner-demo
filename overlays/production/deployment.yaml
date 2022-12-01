@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariner
+  labels:
+    app: mariner
+  namespace: marinertest
+spec:
+  selector:
+    matchLabels:
+      app: mariner
+  template:
+    spec:
+      containers:
+        - name: mariner
+          image: marineracrtest.azurecr.io/webapp:mariner

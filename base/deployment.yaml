@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariner
+  labels:
+    app: mariner
+  namespace: marinertest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariner
+  template:
+    metadata:
+      labels:
+        app: mariner
+    spec:
+      containers:
+        - name: mariner
+          image: marineracrtest.azurecr.io/webapp:mariner
+          ports:
+            - containerPort: 8080

@@ -69,18 +69,31 @@ Publish image to ACR
 --------------------
 
 ```sh
-
+az acr build -t webapp:mariner -r marineracrtest webapp/
 ```
 
 Grant access to ACR for the AKS cluster
 ---------------------------------------
 
+```sh
+az aks update -n testMarinerCluster -g MarinerTest --attach-acr marineracrtest
+```
+
 Deploy webapp to AKS using Mariner image
 ----------------------------------------
+
+```sh
+kubectl apply -k overlays/production
+
+kubectl get all -n marinertest
+
+# Access the load balancer external IP to test the app
+```
 
 Check logs are collected via Container Insights
 -----------------------------------------------
 
+Access 
 
 References
 ----------

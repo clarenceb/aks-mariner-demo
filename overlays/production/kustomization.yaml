@@ -1,0 +1,7 @@
+namePrefix: production-
+namespace: marinertest
+resources:
+  - ../../base
+patchesStrategicMerge:
+  - deployment.yaml
+  - service.yaml
